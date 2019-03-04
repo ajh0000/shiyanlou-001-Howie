@@ -1,23 +1,23 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 import sys
 
-dict_input = sys.argv[1:]
+output_dict = {}
+def handle_data(i):
+    i_key = i.split(':')[0]
+    i_value = i.split(':')[1]
+    output_dict[i_key] = i_value
 
-input_dict = {}
-
-for i in range(len(dict_input)):
-    temp_input = dict_input[i].split(':')
-#    print(temp_input)
-    input_dict[temp_input[0]] = temp_input[1]
-
-for key,value in input_dict.items():
-    print('ID:',key,'Name:',value)
-     
+def print_data(x,y):
+    print('ID:',x,'Name:',y)    
 
 
+if __name__ == '__main__':
+    
+    for arg in sys.argv[1:]:
+        handle_data(arg)
 
-
-
+    for key in output_dict:
+        print_data(key, output_dict[key])
 
 
