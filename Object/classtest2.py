@@ -10,9 +10,9 @@ class UserData:
 	def __repr__(self):
 		return 'ID:{} Name:{}'.format(self.ID,self.name)
 
-class NewUser(UserData):
-	def __init__(self,ID,name):
-		UserData.__init__(self,ID,name)
+class NewUser(UserData): #继承父类 UserData
+	def __init__(self,ID,name):   
+		UserData.__init__(self,ID,name) #继承父类的 __init__
 		self.name = name
 	def set_ID(self,ID):
 		self.ID = ID
